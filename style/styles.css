@@ -3,16 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root {
+/* :root {
   --cf-color: rgb(149, 10, 10);
-}
+} */
+
 a {
   color: inherit;
   text-decoration: none;
 }
 .mynav {
   background-color: #b4d2e7;
-  background-image: url("../images/whitebg-notsodark.jpg");
+  background-image: url("../images/clouds-7613361_1920.png");
+  /* background-repeat: repeat; */
   background-size: cover;
   min-height: 100px;
   max-width: 1600px !important; /*in case of a xxl screen*/
@@ -22,12 +24,14 @@ a {
   font-weight: bold;
   font-size: larger;
 }
-.container {
+.myContainer {
   background-color: rgba(158, 154, 154, 0.4);
   padding: 0;
+  background-image: url("../images/flowers-7910753_640.png");
+  background-repeat: repeat;
 }
 .hero-title {
-  background-color: var(--cf-color);
+  background-color:green;
 }
 .product {
   transition: all 0.2s ease-in-out;

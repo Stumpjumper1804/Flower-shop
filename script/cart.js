@@ -48,8 +48,9 @@ let productsRow = document.querySelector(".products");
 
 for (let product of products) {
   productsRow.innerHTML += `
-  <div class="card product col m-3" style="width: 300px;">
-                <img class="card-img-top mt-2 px-3" src="./images/${
+        <div>    
+  <div class="card product col m-2">
+                <img class="card-img-top img-fluid mt-2 px-3" src="./images/${
                   product.image
                 }" alt="${product.flower}">
                 <div class="card-body px-3 py-0">
@@ -63,6 +64,7 @@ for (let product of products) {
                     <p class="card-text3 d-flex justify-content-end"><button class="btn w-75 product-button"><i class="fs-4 bi bi-cart-plus"></i> Add to cart</button></p>
 
                 </div>
+            </div>
             </div>
     `;
 }
@@ -126,33 +128,30 @@ const createRows = () => {
   for (let item of cart) {
     result += `
     <div class="cart-row row gx-0">
-    <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start">
-                        <img class="cart-item-image" src="./images/${
-                          item.image
-                        }" width="100" height="100" alt="${item.flower}">
-                        <div class="cart-item-title h5 ms-2">${
-                          item.flower
-                        }</div>
-                    </div>
-                    <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
-                        <div class="d-flex">
-                            <i class="plus fs-5 bi bi-plus-circle-fill"></i>
-                        </div>
-                        <div class="text-center m-0 cart-quantity h4 w-25">${
-                          item.qtty
-                        }</div>
-                        <div class="d-flex">
-                            <i class="minus fs-5 bi bi-dash-circle-fill"></i>
-                        </div>
-                    </div>
-                    <div class="col-1 d-flex justify-content-start align-items-center">
-                    <i class="del fs-4 bi bi-trash3-fill text-danger"></i>
-                    </div>
-                    <div class="cart-price col-3 h5 my-auto text-end p-2 pe-sm-5">${currencyFormater.format(
-                      item.price
-                    )}</div>
-                </div>                    
-                </div>
+              <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start">
+                  <img class="cart-item-image" src="./images/${
+                    item.image
+                  }" width="100" height="100" alt="${item.flower}">
+                  <div class="cart-item-title h5 ms-2">${item.flower}</div>
+              </div>
+              <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
+                  <div class="d-flex">
+                      <i class="plus fs-5 bi bi-plus-circle-fill"></i>
+                  </div>
+                  <div class="text-center m-0 cart-quantity h4 w-25">${
+                    item.qtty
+                  }</div>
+                  <div class="d-flex">
+                      <i class="minus fs-5 bi bi-dash-circle-fill"></i>
+                  </div>
+              </div>
+              <div class="col-1 d-flex justify-content-start align-items-center">
+                <i class="del fs-4 bi bi-trash3-fill text-danger"></i>
+              </div>
+              <div class="cart-price col-3 h5 my-auto text-end p-2 pe-sm-5">${currencyFormater.format(
+                item.price
+              )}</div>
+      </div>                            
         `;
   }
   document.querySelector(".cart-items").innerHTML = result;
