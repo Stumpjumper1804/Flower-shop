@@ -91,6 +91,7 @@ const addToCart = (product) => {
   console.table(cart);
   createRows();
   cartTotal();
+  itemsTotal();
 };
 
 //increases item quantity
@@ -116,6 +117,7 @@ const deleteItem = (index) => {
   cart.splice(index, 1);
   createRows();
   cartTotal();
+  itemsTotal();
 };
 //creates row in cart - dom
 const createRows = () => {
@@ -180,5 +182,20 @@ const cartTotal = () => {
   for (let item of cart) {
     total += item.price * item.qtty;
   }
+
+  //give discount, when total >= 50 Euros
+  if (total >= 50) {
+    total *= 0.8;
+    document.getElementById("discount").innerText = "(20 % discount incl.)";
+  }
   document.getElementById("price").innerHTML = currencyFormater.format(total);
+};
+
+//display total items
+const itemsTotal = () => {
+  let totalItems = 0;
+  for (let item of cart) {
+    totalItems++;
+  }
+  document.getElementById("sum-items").innerText = totalItems;
 };
