@@ -109,6 +109,7 @@ const minusQtty = (index) => {
   }
   createRows();
   cartTotal();
+  itemsTotal();
 };
 
 //deletes item from cart
@@ -184,9 +185,18 @@ const cartTotal = () => {
   }
 
   //give discount, when total >= 50 Euros
+  let spanDiscount = document.getElementById("discount");
+
   if (total >= 50) {
     total *= 0.8;
-    document.getElementById("discount").innerText = "(20 % discount incl.)";
+    spanDiscount.innerText = "(20 % discount incl.)";
+    spanDiscount.style.cssText = `
+    background-color: green;
+    color: white;
+    text-align: center;`;
+  } else {
+    spanDiscount.innerText = "";
+    spanDiscount.style.backgroundColor = "white";
   }
   document.getElementById("price").innerHTML = currencyFormater.format(total);
 };

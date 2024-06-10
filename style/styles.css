@@ -79,6 +79,10 @@ a {
   margin-right: 20px;
 }
 
+#discount {
+  margin-right: 5vw;
+}
+
 .btn-purchase {
   font-size: 1.5em;
   background-color: var(--cf-color);
