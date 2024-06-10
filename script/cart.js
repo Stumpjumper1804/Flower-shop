@@ -1,23 +1,42 @@
 const products = [
   {
-    name: "HTML Course",
-    image: "html-icon-logo.png",
-    price: 500.99,
+    flower: "Rose",
+    image: "colour-5350257_640.jpg",
+    price: 4.2,
     qtty: 1,
   },
   {
-    name: "CSS Course",
-    image: "css-icon-logo.png",
-    price: 800.5,
+    flower: "Tulip",
+    image: "colour-5148913_640.jpg",
+    price: 2.6,
     qtty: 1,
   },
   {
-    name: "JS Course",
-    image: "js-icon-logo.png",
-    price: 2100.0,
+    flower: "Viola",
+    image: "pansy-1279354_640.jpg",
+    price: 1.8,
+    qtty: 1,
+  },
+  {
+    flower: "Daffodil",
+    image: "daffodil-4111577_640.jpg",
+    price: 2.5,
+    qtty: 1,
+  },
+  {
+    flower: "Peonies",
+    image: "pion-4736447_640.jpg",
+    price: 4.2,
+    qtty: 1,
+  },
+  {
+    flower: "Gerbera",
+    image: "gerbera-4576979_640.jpg",
+    price: 3.7,
     qtty: 1,
   },
 ];
+
 //current object formatter
 const currencyFormater = new Intl.NumberFormat("de-AT", {
   style: "currency",
@@ -29,13 +48,15 @@ let productsRow = document.querySelector(".products");
 
 for (let product of products) {
   productsRow.innerHTML += `
-  <div class="card product col my-4" style="width: 300px;">
+  <div class="card product col m-3" style="width: 300px;">
                 <img class="card-img-top mt-2 px-3" src="./images/${
                   product.image
-                }" alt="${product.name}">
+                }" alt="${product.flower}">
                 <div class="card-body px-3 py-0">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, libero.</p>
+                    <h4 class="card-title text-center mt-3">${
+                      product.flower
+                    }</h4>
+                    <p class="card-text">If you want to buy this lovely flower, just add it to your cart.</p>
                     <p class="card-text h3 text-end">${currencyFormater.format(
                       product.price
                     )}</p>
@@ -61,7 +82,7 @@ addToCartBtn.forEach((btn, i) => {
 
 //adds product to cart
 const addToCart = (product) => {
-  if (cart.find((val) => val.name == product.name)) {
+  if (cart.find((val) => val.flower == product.flower)) {
     // console.log(cart.find((val) => val.name == product.name));
     product.qtty++;
   } else {
@@ -102,11 +123,13 @@ const createRows = () => {
   for (let item of cart) {
     result += `
     <div class="cart-row row gx-0">
-    <div class="cart-item col-6 ps-md-5 my-2 d-flex align-items-center justify-content-start">
+    <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start">
                         <img class="cart-item-image" src="./images/${
                           item.image
-                        }" width="100" height="100" alt="${item.name}">
-                        <div class="cart-item-title h5 ms-2">${item.name}</div>
+                        }" width="100" height="100" alt="${item.flower}">
+                        <div class="cart-item-title h5 ms-2">${
+                          item.flower
+                        }</div>
                     </div>
                     <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
                         <div class="d-flex">
