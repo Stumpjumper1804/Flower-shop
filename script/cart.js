@@ -50,13 +50,11 @@ for (let product of products) {
   productsRow.innerHTML += `
         <div>    
   <div class="card product col m-2">
-                <img class="card-img-top img-fluid mt-2 px-3" src="./images/${
+                <img class="card-img-top img-fluid" src="./images/${
                   product.image
                 }" alt="${product.flower}">
-                <div class="card-body px-3 py-0">
-                    <h4 class="card-title text-center mt-3">${
-                      product.flower
-                    }</h4>
+                <div class="card-body">
+                    <h4 class="card-title text-center">${product.flower}</h4>
                     <p class="card-text">If you want to buy this lovely flower, just add it to your cart.</p>
                     <p class="card-text h3 text-end">${currencyFormater.format(
                       product.price
