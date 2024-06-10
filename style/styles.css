@@ -79,16 +79,21 @@ a {
   border-radius: 10px;
 }
 
+.cart-items p {
+  opacity: 0.3;
+  padding: 0px 5px;
+}
+
 .cart-total {
   font-weight: bold;
   text-align: end;
   margin-top: 10px;
   margin-right: 10px;
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 .cart-btn {
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 .cart-total-title {
