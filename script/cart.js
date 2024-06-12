@@ -48,23 +48,23 @@ let productsRow = document.querySelector(".products");
 
 for (let product of products) {
   productsRow.innerHTML += `
-        <div>    
-  <div class="card product col m-2">
-                <img class="card-img-top img-fluid" src="./images/${
-                  product.image
-                }" alt="${product.flower}">
-                <div class="card-body">
-                    <h4 class="card-title text-center">${product.flower}</h4>
-                    <p class="card-text">If you want to buy this lovely flower, just add it to your cart.</p>
-                    <p class="card-text h3 text-end">${currencyFormater.format(
-                      product.price
-                    )}</p>
-                    <p class="card-text3 d-flex justify-content-end"><button class="btn w-75 product-button"><i class="fs-4 bi bi-cart-plus"></i> Add to cart</button></p>
-
-                </div>
-            </div>
-            </div>
-    `;
+          <div>    
+    <div class="card product col m-2">
+                  <img class="card-img-top img-fluid" src="./images/${
+                    product.image
+                  }" alt="${product.flower}">
+                  <div class="card-body">
+                      <h4 class="card-title text-center">${product.flower}</h4>
+                      <p class="card-text">If you want to buy this lovely flower, just add it to your cart.</p>
+                      <p class="card-text h3 text-end">${currencyFormater.format(
+                        product.price
+                      )}</p>
+                      <p class="card-text3 d-flex justify-content-end"><button class="btn w-75 product-button"><i class="fs-4 bi bi-cart-plus"></i> Add to cart</button></p>
+  
+                  </div>
+              </div>
+              </div>
+      `;
 }
 
 //cart declared
@@ -125,32 +125,32 @@ const createRows = () => {
   let result = "";
   for (let item of cart) {
     result += `
-    <div class="cart-row row gx-0">
-              <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start">
-                  <img class="cart-item-image" src="./images/${
-                    item.image
-                  }" width="100" height="100" alt="${item.flower}">
-                  <div class="cart-item-title h5 ms-2">${item.flower}</div>
-              </div>
-              <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
-                  <div class="d-flex">
-                      <i class="plus fs-5 bi bi-plus-circle-fill"></i>
-                  </div>
-                  <div class="text-center m-0 cart-quantity h4 w-25">${
-                    item.qtty
-                  }</div>
-                  <div class="d-flex">
-                      <i class="minus fs-5 bi bi-dash-circle-fill"></i>
-                  </div>
-              </div>
-              <div class="col-1 d-flex justify-content-start align-items-center">
-                <i class="del fs-4 bi bi-trash3-fill text-danger"></i>
-              </div>
-              <div class="cart-price col-3 h5 my-auto text-end p-2 pe-sm-5">${currencyFormater.format(
-                item.price
-              )}</div>
-      </div>                            
-        `;
+      <div class="cart-row row gx-0">
+                <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start">
+                    <img class="cart-item-image" src="./images/${
+                      item.image
+                    }" width="100" height="100" alt="${item.flower}">
+                    <div class="cart-item-title h5 ms-2">${item.flower}</div>
+                </div>
+                <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
+                    <div class="d-flex">
+                        <i class="plus fs-5 bi bi-plus-circle-fill"></i>
+                    </div>
+                    <div class="text-center m-0 cart-quantity h4 w-25">${
+                      item.qtty
+                    }</div>
+                    <div class="d-flex">
+                        <i class="minus fs-5 bi bi-dash-circle-fill"></i>
+                    </div>
+                </div>
+                <div class="col-1 d-flex justify-content-start align-items-center">
+                  <i class="del fs-4 bi bi-trash3-fill text-danger"></i>
+                </div>
+                <div class="cart-price col-3 h5 my-auto text-end p-2 pe-sm-5">${currencyFormater.format(
+                  item.price
+                )}</div>
+        </div>                            
+          `;
   }
   document.querySelector(".cart-items").innerHTML = result;
   const plusBtns = document.querySelectorAll(".plus");
@@ -188,9 +188,9 @@ const cartTotal = () => {
     total *= 0.8;
     spanDiscount.innerText = "(20 % discount incl.)";
     spanDiscount.style.cssText = `
-    background-color: green;
-    color: white;
-    text-align: center;`;
+      background-color: green;
+      color: white;
+      text-align: center;`;
   } else {
     spanDiscount.innerText = "";
     spanDiscount.style.backgroundColor = "white";
