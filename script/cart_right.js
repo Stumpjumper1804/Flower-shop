@@ -127,7 +127,7 @@ const createRows = () => {
     result += `
     <div class="cart-row row gx-0">
               <div class="cart-item my-2 d-flex align-items-baseline justify-content-between border border-danger border-3">
-              <div class="d-flex">
+              <div class="d-flex flex-wrap">
                   <img class="cart-item-image border border-primary border-2" src="./images/${
                     item.image
                   }" width="100" height="100" alt="${item.flower}">
@@ -135,7 +135,7 @@ const createRows = () => {
                     item.flower
                   }</div>
                   </div>
-                  <div class="cart-price h5 my-auto text-end p-2 pe-sm-5 border border-warning border-3">${currencyFormater.format(
+                  <div class="cart-price h5 my-auto text-end p-2 me-2 border border-warning border-3">${currencyFormater.format(
                     item.price
                   )}</div>
               </div>
@@ -157,7 +157,7 @@ const createRows = () => {
               <div class="col-2 d-flex justify-content-start align-items-center w-50 border border-danger border-3">
                 <i class="del fs-4 bi bi-trash3-fill text-danger border border-dark border-3"></i>
               </div>
-
+          
       </div>                            
         `;
   }
