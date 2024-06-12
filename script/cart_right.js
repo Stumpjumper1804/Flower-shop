@@ -59,7 +59,7 @@ for (let product of products) {
                     <p class="card-text h3 text-end">${currencyFormater.format(
                       product.price
                     )}</p>
-                    <p class="card-text3 d-flex justify-content-end"><button class="btn w-75 product-button"><i class="fs-4 bi bi-cart-plus"></i> Add to cart</button></p>
+                    <p class="card-text3 d-flex justify-content-end"><button class="btn product-button"><i class="fs-4 bi bi-cart-plus"></i> Add to cart</button></p>
 
                 </div>
             </div>
@@ -126,11 +126,18 @@ const createRows = () => {
   for (let item of cart) {
     result += `
     <div class="cart-row row gx-0">
-              <div class="cart-item my-4 d-flex align-items-center justify-content-start border border-danger border-3">
-                  <img class="cart-item-image" src="./images/${
+              <div class="cart-item my-2 d-flex align-items-baseline justify-content-between border border-danger border-3">
+              <div class="d-flex">
+                  <img class="cart-item-image border border-primary border-2" src="./images/${
                     item.image
                   }" width="100" height="100" alt="${item.flower}">
-                  <div class="cart-item-title h5 ms-2">${item.flower}</div>
+                  <div class="cart-item-title h5 ms-2 my-auto p-2 align-items-center border border-success border-3">${
+                    item.flower
+                  }</div>
+                  </div>
+                  <div class="cart-price h5 my-auto text-end p-2 pe-sm-5 border border-warning border-3">${currencyFormater.format(
+                    item.price
+                  )}</div>
               </div>
 
               <div class="cart-qtty-action col-1 d-flex justify-content-around w-50 align-items-center border border-primary border-3">
@@ -148,12 +155,9 @@ const createRows = () => {
               </div>
 
               <div class="col-2 d-flex justify-content-start align-items-center w-50 border border-danger border-3">
-                <i class="del fs-4 bi bi-trash3-fill text-dark border border-dark border-3"></i>
+                <i class="del fs-4 bi bi-trash3-fill text-danger border border-dark border-3"></i>
               </div>
 
-              <div class="cart-price h5 my-auto text-end p-2 pe-sm-5 border border-warning border-3">${currencyFormater.format(
-                item.price
-              )}</div>
       </div>                            
         `;
   }
