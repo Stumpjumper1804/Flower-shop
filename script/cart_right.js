@@ -157,7 +157,7 @@ const createRows = () => {
               <div class="col-2 d-flex justify-content-start align-items-center w-50 border border-danger border-3">
                 <i class="del fs-4 bi bi-trash3-fill text-danger border border-dark border-3"></i>
               </div>
-          
+              <div class="spacing vh-1 bg-secondary text-secondary">.</div>
       </div>                            
         `;
   }
