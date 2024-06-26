@@ -88,7 +88,7 @@ const addToCart = (product) => {
   } else {
     cart.push(product);
   }
-  console.table(cart);
+
   createRows();
   cartTotal();
   itemsTotal();
@@ -126,27 +126,27 @@ const createRows = () => {
   for (let item of cart) {
     result += `
       <div class="cart-row row gx-0">
-                <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start">
+                <div class="cart-item col-6 ps-md-5 my-4 d-flex align-items-center justify-content-start border border-dark border-1">
                     <img class="cart-item-image" src="./images/${
                       item.image
                     }" width="100" height="100" alt="${item.flower}">
                     <div class="cart-item-title h5 ms-2">${item.flower}</div>
                 </div>
-                <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center">
+                <div class="cart-qtty-action col-2 d-flex justify-content-center align-items-center border border-dark border-1">
                     <div class="d-flex">
-                        <i class="plus fs-5 bi bi-plus-circle-fill"></i>
+                        <i class="minus fs-5 bi bi-dash-circle-fill"></i>
                     </div>
                     <div class="text-center m-0 cart-quantity h4 w-25">${
                       item.qtty
                     }</div>
                     <div class="d-flex">
-                        <i class="minus fs-5 bi bi-dash-circle-fill"></i>
+                        <i class="plus fs-5 bi bi-plus-circle-fill"></i>
                     </div>
                 </div>
-                <div class="col-1 d-flex justify-content-start align-items-center">
+                <div class="col-1 d-flex justify-content-start align-items-center border border-dark border-1">
                   <i class="del fs-4 bi bi-trash3-fill text-danger"></i>
                 </div>
-                <div class="cart-price col-3 h5 my-auto text-end p-2 pe-sm-5">${currencyFormater.format(
+                <div class="cart-price col-3 h5 my-auto text-end p-2 pe-sm-5 border border-dark border-1">${currencyFormater.format(
                   item.price
                 )}</div>
         </div>                            

@@ -28,6 +28,7 @@ a {
   font-weight: bold;
   font-size: larger;
 }
+
 .myContainer {
   background-color: rgba(158, 154, 154, 0.4);
   padding: 0;
@@ -37,13 +38,21 @@ a {
 }
 .hero-title {
   background-color: green;
+  opacity: 0.7;
 }
+
+.bi-flower1 {
+  margin: 0 15px;
+}
+
 .product {
   transition: all 0.2s ease-in-out;
 }
+
 .product:hover {
   transform: scale(1.02);
 }
+
 .product-button {
   background-color: #151616;
   color: white;
@@ -65,6 +74,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   border: 3px solid black;
+  border-radius: 10px;
   background-color: white;
 }
 .cart-row {
